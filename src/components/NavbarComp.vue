@@ -36,6 +36,9 @@
 </script>
 
 <style scoped>
+nav{
+    background-color: rgb(245, 241, 235);
+}
 .navbar-link{
     text-decoration: none;
     margin: 1rem;
