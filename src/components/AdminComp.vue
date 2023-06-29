@@ -78,6 +78,16 @@
                          <th>Edit</th>
                          <th>Delete</th>
                      </tr>
+                     <tr v-for="item in products" :key="item.id">
+                      <td> {{ item.id }}</td>
+                      <td>{{ item.type }}</td>
+                      <td class="tbl-image"><img :src="item.image"></td>
+                      <td> {{ item.location }}</td>
+                      <td>R {{ item.price }}</td>
+                      <td> {{ item.rooms }}</td>
+                      <td><button data-bs-toggle="modal" data-bs-target="#newListing-model" id="edit-btn">Edit</button></td>
+                      <td><button id="delete-btn">Delete</button></td>
+                  </tr>
                  </table>
               </div>
              </div>
@@ -87,6 +97,11 @@
 
 <script>
     export default {
+      computed: {
+            products(){
+                return this.$store.state.prods
+            }
+        }
         
     }
 </script>

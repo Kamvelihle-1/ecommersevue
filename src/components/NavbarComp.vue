@@ -11,7 +11,7 @@
           
             <div class="col pt-3 navigations" id="navigation">
                 <router-link class="navbar-link" to="/">Home</router-link> 
-                <router-link class="navbar-link" to="/products">Products</router-link> 
+                <router-link @click="getProducts" class="navbar-link" to="/products">Products</router-link> 
                 <router-link class="navbar-link" to="/admin">Admin</router-link> 
                 <router-link class="navbar-link" to="/checkout">Wish-list</router-link> 
             </div>
@@ -25,6 +25,12 @@
 
 <script>
     export default {
+        
+        methods: {
+            getProducts(){
+                this.$store.dispatch('getProducts')
+            }
+        }
         
     }
 </script>
